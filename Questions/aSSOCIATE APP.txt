@@ -1,0 +1,37 @@
+DF1
+Age|Salary
+
+DF2
+age>30 and 
+
+Df = DF1.join(DF2,DF1.ID==DF2.ID,"inner)
+DF.show()
+
+DF.where("DF.Age>30,Df.Salary>5000").show()
+
+
+
+Question on SQL Query??
+	EMPLOYEE table
+	+---------+-----------+-------------+
+	| emp_id  | emp_name  | manager_id  |
+	+---------+-----------+-------------+
+	|   101   | Grayson   |   106       |
+	|   102   | Milo      |   108       |
+	|   103   | Lyla      |   107       |
+	|   104   | Jenny     |   108       |
+	|   105   | Paul      |   108       |
+	|   106   | Emily     |   null      |
+	|   107   | Parker    |   106       |
+	|   108   | Klint     |   107       |
+	|   109   | Carter    |   108       |
+	|   110   | Ben       |   106       |
+	+---------+-----------+-------------+
+ 
+	Write a query that returns Manager ID, Manager Name and Employees Count under each manager.
+
+
+
+select B.Manager_ID,B.emp_name As "Manager_Name",count(emp_id) as 'Count' from EMPLOYEE table A join EMPLOYEE table B on A.emp_id=B.manager_id
+group by B.Manager_ID,B.emp_name
+

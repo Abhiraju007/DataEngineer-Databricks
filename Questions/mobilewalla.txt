@@ -1,0 +1,90 @@
+salting_technique
+
+Df1
+Id1 1 2 3 4 5 
+Id2
+Id3
+ID|Sal
+Df2
+ID1
+
+ID|Name|Subject
+
+
+%python
+
+import random as rm
+
+DF_1= df1.WithColumn("Salt_key",concat(rn.range(1,10)*DF1.ID)
+DF_2 = df2.WithColumn("Salt_key",concat(rn.range(1,10)*DF2.ID)
+
+DF_Skew = DF
+
+Id11
+Id14
+Id22
+Id34
+
+
+Id11
+Id12
+Id13
+Id14
+Id15
+Id1
+
+Machine Round 1
+L1 Round 1 hour
+L2 Round 1 hour
+L3 Semi 
+L4
+
+
+[16:54] Reyaz Ahmed (Unverified)
+Consider a df named df with the given simplified schema:
+-- root
+-- |-- ID: string (nullable = true)
+-- |-- User_ID: string (nullable = true)
+-- |-- Amount: double (nullable = true)
+-- |-- Date: timestamp (nullable = true) 19-06-2024
+-- |-- Type: string (nullable = true)
+-- |-- Merchant: string (nullable = true)
+Generate the total transaction amount per month and the percentage change from the previous month for each user.
+
+from pyspark.sql.functions import *
+
+DF1 = DF.withColumn("Month",DATEFORMAT("Date","MMM"))
+DF2 = DF1.agg("sum",col("Amount")).alias("Total Amount").groupBY(["Month","User_ID"])
+
+window1 = Window.PartitionBy("User_ID").orderby("Month")
+
+DF3 = DF2.withColumn("Last_month",LAG("Month",1,0) over(window1)
+
+Df4 = DF3.withColumn("Difference",(DF2.Total_Amount-DF3.Last_Month)/DF2.Total_Amount)*100)
+DF4.show()
+
+
+
+Input: target = 7, nums = [2,3,1,2,4,3]
+Output: 2
+Explanation: The subarray [4,3] has the minimal length under the problem constraint.
+
+def minimal_len(num,target):
+      c = 0
+         
+      for i in range(0,len(nums)):
+              for j in range(0,i+1):   
+                   if num[i]+num[j] >=  target
+                      c = c+i
+      
+                     
+               
+               
+                     
+
+
+
+
+
+
+
