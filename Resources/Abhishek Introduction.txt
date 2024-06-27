@@ -1,0 +1,22 @@
+Hello, my name is Abhishek Pandey, and I am a data analyst based in New Delhi, India. I have a strong background in SQL, data visualization, 
+and analytics, with experience in various tools such as Power BI, SAP Analytic Cloud, and Alteryx. 
+
+In my current role as a Reporting Analyst at Ericsson, I have been responsible for executing projects in audit analytics and internal audit analytics. 
+I have utilized my expertise in SQL and Alteryx to handle large volumes of data, perform data transformation, 
+and build data models for efficient analysis and reporting. Additionally, 
+I have developed VBA automation and scripting solutions, reducing manual effort and improving data accuracy by 50%. 
+I have also leveraged Python to streamline data analysis processes and enhance data-driven decision-making. 
+Furthermore, I have created data visualization solutions using Power BI and SAP Analytic Cloud, enabling stakeholders to gain actionable insights 
+and make informed decisions.
+
+Prior to my current role, I worked as a Data Analyst at NTT Data Services, where I used SQL, Python, 
+and VBA for data acquisition, analysis, and automation. 
+I developed dashboards and metrics using SQL, Power BI, and Excel, presenting them to stakeholders and the leadership team. 
+I also managed SLAs for data requests and played a key role in data governance, ensuring data accuracy and security.
+
+My educational background includes a Bachelor of Science degree in Electrical, Electronics, and Communications Engineering from Guru Gobind Singh Indraprastha University in New Delhi.
+
+
+Overall, I bring strong skills in SQL, Python, Excel, VBA, Power BI, Alteryx, SAP Analytic Cloud, and Power Query. I am passionate about leveraging data to derive business insights, and I have a proven track record in delivering valuable recommendations and providing consulting experiences to global clients.
+
+Thank you for considering my introduction, and I look forward to discussing how my skills and experience can contribute to your organization.
