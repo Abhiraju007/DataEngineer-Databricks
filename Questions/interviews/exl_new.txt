@@ -1,0 +1,33 @@
+Tablel1      Table2 
+10             50
+
+
+Left Join
+Min = 10
+Max = 100
+
+Table1	 	 
+Policy Number	Coverage No.	Premium
+P1	           C1	                 100
+P1	           C2	                 100
+P2	           C1	                 100
+
+
+output:- 
+
+Table2	 	 	 	 
+Policy Number	No. of Coverages	C1	C2	Total Premium
+P1	          2	                 1	1	        200
+P2	          1	                 1	0	        100
+
+
+
+select Policy_number,count(Coverage No.) as 'No. of Coverages', 
+count(case when Coverage No. = C1 then 1 else 0) end as 'C1',
+count(case when Coverage No. = C2 then 1 else 0) end as 'C2'
+
+
+select Policy_number,count(Coverage No.) as 'No. of Coverages',
+
+
+

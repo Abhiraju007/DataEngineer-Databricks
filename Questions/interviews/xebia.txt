@@ -1,0 +1,40 @@
+columns = [Name, dob, gender]
+ Data = [(Abhishek,10/01/1997, M),
+         (Shreya,10/01/1997, F),
+         (Abhi,10/01/1997, M),
+]
+
+df = spark.createDataframe(data,column)
+
+1. Age column in another column
+2. Replace all M to Male and F to Female, if
+
+from pysark.sql.functions import *
+
+df1 = df.withColumn("Age",datediff(df.dob,today(),"Y")
+
+df1.show()
+
+df2 = df2.case(when df.gender == 'M' then 'Male),
+               when df.gender == 'F' then 'Female)
+               otherwise 
+
+
+{
+    "college_name": "Xebia",
+    "class": "Dev",
+    "employee": [
+    {
+        "id": "A1",
+        "name": "Jim",
+        "Java": 60,
+        "Python": 66,
+        "spark": 61
+    },
+   ]
+}
+
+df = df
+
+
+

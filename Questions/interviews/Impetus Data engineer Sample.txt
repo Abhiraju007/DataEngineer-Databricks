@@ -1,0 +1,54 @@
+Impetus Data Engineer:-
+
+1.
+First Round Q1 Delete duplicates from a table. 
+Q2 Find duplicate rows from the table. 
+Q3 Repartition vs Coalesce 
+Q4 How stages are created in Spark ?
+Q5 Word count program with Spark 
+Q6 Fibonnaci Sequence using Python 
+Q7 What are generators ? 
+Q8 Spark Architecture 
+Q9 Questions related to project Techno managerial Round 
+Q1 Discussion about the project and experience. 
+Q2 Query to create a table and partition the table in HIVE ? 
+Q3 Directory structure for partitioned table 
+Q4 If you add a new directory with correct schema to hdfs will data be shown in HQL ? 
+Q5 Find the max temperature for a given date range ?
+
+2.
+Q1. Find number of occurrences of a substring in the given string.
+Q2. Spark question to join two df's and add a new column based of salary. Also to replace null values in a row with 'ABC'.
+Q3. SQL question to find max salary in each department from employee table.
+Q4. how to load file into dataframe
+Q5. what are transformation and action you have used in spark
+
+3.
+Q1. No Python theory questions as such. 
+Q2. Showed a code involving "yield" statement to check python skills and average python coding questions. 
+Q3. SQL questions which may cover cross, full, left and right join. Window functions, rank dense rank etc. 
+Q4. Hive and spark basic questions about partitions and bucketing.
+
+4.
+1) What is the Core of spark ?
+2) What is the difference between Spark Dataframe and Spark Dataset ?
+3) Explain Wide and Narrow transformation with an example ?
+4) What is the difference between Spark Session and SparkContext ?
+5) How to initialize SparkContext ?
+6) Explain Spark Architecture ?
+7) What is Staging in Spark ?
+8) Write a sql query to find out Second Highest Salaried person in each department ?
+9) Write Recursion Fibonacci series code?
+10) Explain Window function and difference between Row Number , Rank and Dense Rank ?
+11) Explain HIVE Architecture ?
+12) Explain Hive Partitioning and Bucketing concepts?
+13) Let’s suppose If We added partitions manually in hive table path, We are trying to fetch those partition using hive query. Will it give the partition or not. If not then why?
+14) Explain External and Managed tables in hive ?
+15) What is MapSide joins ? why it is used?
+16) Explain Python Generator ?
+17) Explain Inheritance in Python ?
+18) Explain Exception Handling in Python ?
+19) Table employee has 3 columns like EmpID, OfficeMobile and HomeMobile.
+Some employees have given same number for both places, Others have given different. 
+Output should be 2 columns EmpID & ContactNo. 
+If same numbers for both places then 1 row else 2 rows should be in the output ?

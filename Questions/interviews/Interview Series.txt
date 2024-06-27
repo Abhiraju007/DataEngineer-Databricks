@@ -1,0 +1,302 @@
+Deloitte Interview
+
+1. Difference between head() and take()
+2. How to convert array column into list of columns?
+3. How to drop columns if it has null value in it?
+4. Error in dynamic partition pruning?
+5. What are read mode and write mode in spark
+    Read Mode                   Write Mode
+    1. Failfast                 1. Append
+    2. Dropmalformed            2. Overwrite
+    3. Permissive               3. Ignore
+                                4. ErrorIfExists
+6. How will you use once column always on top(SQL)?
+   --> Create a new column by giving 1 as US and 2 as rest
+   --> Now do all calculations and then do order by newly_created_column
+       Country| Revenue
+
+7. No. of occurance in column(SQL)?
+8. Age Bracket SQL Questions?
+9. How AQE works?
+    AQE(Apative Query Execution)
+    optimization technique:-
+     1. Dynamically coalescing shuffle partitions
+     2. Dynamically switching join stregies
+     3. Dynamically optimizing skew joins
+
+10. Map Reduce and Spark Difference
+    Map Reduce:-
+    1.handle only Hadoop Distrubuted File System
+    2.slow speed as compared to Apache Spark
+    3.Unable to handle real time processing
+    Spark:-
+    1.Open-source framework used for faster data processing
+    2.It is much faster than MapReduce
+    3.It can deal with real time processing
+    4.It is easy for programming
+
+11. Check points in Spark? check points mentions-->
+    1.Spark logical/physcial plan can be very large, so the computing chain 
+      be too long that it takes lots of time to compute RDD.
+    If, unfortunately some errors or exceptions occur during the execution of task
+    whole computing chain needs to be re-executed.
+    which is considerably expensive. therefore we need to checkpoint some tim
+    consuming RDDs. Thus, even if the following RDD goes wrong it can continue
+    with the data retrieve from checkpointed RDDs.
+
+12. What is serializer in spark?
+   Serialization refers to converting objects into stream of bytes and vice versa
+   (de-serialization) in an optimal way it over nodes of network or store it in file.
+
+   Spark provides two serialization libraries and modes are supported and configured
+   through spark.serializer property.
+   1. Java serialization(default)
+   2. Kryo serialization(recommended by spark)
+
+13. How to convert 3 row result in one column:-
+
+student_id	section	  subject_name	 marks_obtained
+1	           A	    MATHS	        96
+2	           A	    MATHS	        75
+3	           A	    MATHS	        91
+4	           A	    MATHS	        86
+5	           A	    MATHS	       100
+1	           B	    MATHS	        96
+2	           B	    MATHS	        90
+3	           B	    MATHS	        91
+1	           C	    MATHS	        86
+2	           C	    MATHS	        76
+
+Ans:-13
+select section,round(avg(marks_obtained),2) as 'Section_avg', string_agg(student_id, ',') as 'Students'
+from student_marks
+group by section
+
+section	Section_avg	Students
+A	   89.6	        1,2,3,4,5
+B	   92.33	1,2,3
+C	   81	        1,2
+
+Ques:-14 Given two strings, how would you know if they are anagrams of each other?(Python)
+example:- Anagram      Words
+          LISTEN       SILENT
+          TRIANGLE     INTEGRAL
+
+def check_anagram(s1,s2):
+     
+    if(sorted(s1)== sorted(s2)):
+      print("The string are anagrams.")
+    else:
+      print("The Strings arr not anagrams,")
+
+s1 = "listen"
+s2 = "silent"
+
+check(s1,s2)
+
+
+Ques:-15 2 sum problem(Python)?
+ex1:-
+   nums = [2,7,11,15] target = 9
+   o/p: [0,1]
+ex:-2
+   nums = [3,2,4], target = 6
+   o/p: [1,2]
+
+
+Ans:-15
+def twosum(nums, target):
+    d = {}
+    for i, num in enumerate(nums):
+        if target - num in d:
+            return d[target-num], i
+        d[num] = i
+
+nums = (2,7,1,15)
+target = 9
+print(twosum(nums, target)) 
+  
+
+--------------------------------------------------------------------------------------------------------------------
+Impetus Interview
+
+Q1. Given a string find out the occurance of each character?(Python)
+
+Ans:-1
+x = 'Abhishek'
+y = x.lower()
+d = {}
+for i in y:
+    if i in d:
+        d[i] +=1
+    else:
+        d[i]=1
+
+for key in d:
+    print(key,d[key])
+
+
+x = 'Hi Abhishek Welcome to Impetus Abhishek'
+
+y = x.lower()
+z = y.split(" ")
+c = {}
+for i in z:
+    if i in c:
+        c[i]+=1
+    else:
+        c[i] = 1
+
+for key,value in c.items():
+    print(key,value,end=",")
+
+
+Ques:-2 Sort the array and merge it
+
+def merge_sort(ar1,ar2):
+    i=0
+    j=0
+    len1 = len(ar1)
+    len2 = len(ar2)
+    arr = []
+
+    while((i<len1) and (j<len2)):
+        if (ar1[i]<ar2[j]):
+            arr.append(ar1[i])
+            i+=1
+        else:
+            arr.append(ar2[j])
+            j+=1
+    while i < len1:
+        arr.append(ar1[i])
+        i+=1
+
+    while j < len2:
+        arr.append(ar2[j])
+        j+=1
+    return arr
+
+ar1 = [1,4,9,10]
+ar2 = [2,8,3,7]
+arr = merge_sort(ar1,ar2)
+print(arr)
+
+Qus:-3 How to create a table partitioned on few column?
+
+Create TABLE DB_NAME.TABLE_NAME
+(
+ID int, Name String, City String
+)
+Partitioned BY(State String, Month String)
+ROW FORMATTED DELIMITED FIELDS
+TERMINATED BY "|"
+
+Ques:4 How will you put data into table from hdfs and local into the table?
+
+File residing at hdfs location
+
+ hdfs dfs -put -f <table hdfs location>
+
+File residing at local
+
+LOAD DATA [Local] INPATH 'filepath' [OVERWRITE] INTO TABLE tablename
+[PARTITION (partcol1=val1, partcol2=val2...,)]
+[INPUTFORMAT 'inputformat' SERDE 'serde']
+
+
+Ques:-5 Given a table with one column id find the sum of all positive and negative numbers?
+
+I/P
+ID
+5
+-5
+-7
+-2
+3
+10
+1
+
+select sum(id) as id from abc where id>0
+union all
+select sum(id) as id from abc where is<0
+
+O/P
+ID
+19
+-14
+
+Ques:-6 Given two tables find out the reocrds which are not common in both
+
+Table1         Table2
+ID               ID
+10               10
+20               30
+30               50
+40
+50
+
+O/P
+20
+40
+
+
+select A.ID from Table1 left join Table2 on
+A.ID = B.ID where A.ID = 'null'
+
+Ques:-7 Read a csv file and infer shcema then filter the reocrds where id> 100
+and then write into the table
+
+
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.appName("interview").getOrCreate()
+
+my_Schema = StructType([StructField('id', IntegerType(), True)],
+            [StructField('name', StringType(), True)],
+            [StructField('date', TIMESTAMP(), True)]
+)
+
+df = spark.read.format('csv').option('mode':'permissive')\
+     .option('schema':my_schema).load('c/user/sample.csv')
+
+transformed_df = df.filter(col('id')>100)
+
+transformed_df.write.format('parquet').saveASTable('
+
+To write it on table
+
+df = spark.read.format("csv").option("mode","permissive").option('db.table_name')
+
+
+Ques:-9 Pyspark writer Partition By and Bucket By(difference
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------
+Walmart Interview Questions
+
+Ques:-1 Parenthesis Check Problem (Python)
+
+
+Ques:-2 How to submit Spark Jobs
+
+Spark-submit --master yarn --deploy-mode cluster \
+             --num-executors 10 --executors-corse 2 \
+             --driver-memory 5g --executors-memory 10g \
+             --cong "spark.dynamicAllocation.enabled=true" \
+             --py-files c://users/scripts.py\
+             --files c://user/abc.json\
+
+
+
+
+
+
+
+
+

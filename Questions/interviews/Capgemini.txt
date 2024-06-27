@@ -1,0 +1,13 @@
+TableA
+TableB
+Tablec
+
+State = Haryana
+
+
+
+select *from table A join table B on A.id = B.id
+join table C on B.id = C.id
+where state = 'Haryana'
+union 
+select *from table A join table B on A.id = B.id

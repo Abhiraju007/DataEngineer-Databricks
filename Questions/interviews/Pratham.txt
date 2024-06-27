@@ -1,0 +1,8 @@
+
+
+
+total_sales = sum(sales)
+
+if today is wednesday then col1+col2
+
+=if(format(Date,"DDD") = "Wed",Col1+col2,Col1-Col2)

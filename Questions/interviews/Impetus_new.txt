@@ -1,0 +1,90 @@
+Data_csv file
+
+
+from pyspark.sql.functions import SparkSession
+
+spark = SparkSession.getorCreate.appName("Interview").local(*)
+
+df = spark.read('Data_csv')
+df.show()
+
+emp_data
+
+emp_id|emp_name|Salary|Dept_id
+
+from pyspark.sql.functions import *
+
+How many employee in each department
+
+winow1 = Window.PartitionBy("Dept_Id).OrderBy("emp_id")
+
+DF1 = DF.withColumn("Total_count",count(*).over(winow1))
+DF1.show()
+
+
+%sql
+spark.sql """
+select Dept_id,count(*) over(partition by Dept_id order by emp_id) as 'Total_count'
+from df
+group by Dept_id
+"""
+count of employee whose salary is more than 10,000
+
+spark.sql """
+select count(*)  as 'Total_count'
+from df where Salary > 10000
+
+"""
+
+
+
+df2 = df.filter(select(col("Df.Salary")>10000)
+
+df3 = Df2.withColumn("Total_Count",agg(count("DF2.employee"))
+df3.show()
+
+
+
+deptid| empid1,empid2,empid3
+
+deptid empid1
+depid2  empid2
+depiid1,empid3
+
+Pyspark
+
+Df1 = Df.withColumn("Emp_id",explode("Df.emp_id",",").drop(select(col("Df.Emp_id"))
+
+Df1.show()
+
+
+select dept_id, string_agg(empid1,",") as "emp_id" from df
+
+a = 6
+b = 5
+
+a,b = b,a
+
+
+import os
+
+f = withopen('/path', 'r')
+ 
+
+for i in f:
+    for j in i:
+       x =  f.readlines(j)
+       print(x)
+
+system()
+
+
+system()
+
+
+
+  
+
+
+
+

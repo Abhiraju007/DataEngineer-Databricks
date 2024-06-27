@@ -1,0 +1,70 @@
+Table 1	 	 
+Policy Number	Coverage No.	Premium
+P1	            C1	                100
+P1	            C2	                100
+P2	            C1	                100
+
+
+
+Table 2	 	 	 	 
+Policy Number	No. of Coverages	C1	C2	Total Premium
+P1	             2	                  1	1	200
+P2	             1	                  1	0	100
+
+
+sql
+
+select Policy_number,count(Policy Number) as "No. of Coverages",sum(case when Coverage No. = C1 then 1 else 0) end as "C1",
+sum(case when Coverage No. = C2 then 1 else 0) end as "C2",
+sum(premimum) as "Total_Premium"
+from Table1 group by Policy_number
+
+Pyspark
+
+import pyspark.sql.functions import *
+
+df1  = df.withColumn("No_of_Coverages",agg(count(df.Policy Number").withColumn("Total Premium",agg(sum(df.Premimum)\
+         .agg(sum(case when Df.Coverage No. = C1 then 1 otherwise 0) end as "C1"\
+         .agg(sum(case when Df.Coverage No. = C2 then 1 otherwise 0) end as "C2"
+         .select(df.Policy NO)
+df1.show()
+
+
+
+Team_1	Team_2	Winner
+India	SL	India
+SL	Aus	Aus
+SA	Eng	Eng
+Eng	NZ	NZ
+Aus	India	India
+
+
+Team_Name	Matches_Played	No_Of_Wins	No_Of_Losses
+India	               2	     2	               0
+SL	                2	     0	               2
+
+
+
+
+
+with CTE As
+(
+select Team_1 as "Team_Name", count(*) as "Match_Played",
+sum(case when Team_1 = Winner then 1 else 0) end as "No_Of_Wins",
+sum(case when Team_2 = Winner then 1 else 0) end as "No_Of_loss",
+from Table1
+)
+CTEA As
+(
+select Team_2 as "Team_Name", count(*) as "Match_Played",
+sum(case when Team_2 = Winner then 1 else 0) end as "No_Of_Wins",
+sum(case when Team_1 = Winner then 1 else 0) end as "No_Of_loss",
+from Table1
+)
+
+select *from CTE 
+union All
+select *from CTEA
+
+
+

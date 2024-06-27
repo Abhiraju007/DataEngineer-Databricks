@@ -1,0 +1,41 @@
+The sales table contains columns for product_id, date, and sales_amount.
+Write an SQL query to calculate the cumulative sales amount for each product over date.
+
+select product_id,date, sum(sales_amount) over(partiton by product_id, order by date asc) as 'Cummaltive_sales' from Table
+group by product_id,date
+order by product_id,date
+
+
+How do you add a new column to a DataFrame in PySpark assume your adding 3 columns.
+
+DF1 = DF.withColumn("New_column1","")
+Df2 = DF1.withColumn("New_column2","")
+DF2.withColumn("New_column3","").show()
+
+DF1 = DF.AddColumn(["New_column1","New_column2","New_column3"])
+
+
+How do you handle the bad record in a given data frame the bad records to be dropped while read operation. 
+ 
+ 
+id	
+name	
+      age
+1	
+A	
+1
+2
+B	
+2
+3	
+C	
+five
+4	
+D	
+4
+
+
+Df.format("csv").read().
+
+
+

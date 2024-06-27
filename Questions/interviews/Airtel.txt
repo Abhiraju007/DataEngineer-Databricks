@@ -1,0 +1,49 @@
+DF = [1,2,3,49]
+
+
+%python
+
+n = input("Enter a country name:")
+
+DF.filter(col("Country")==n).show()
+
+def dec_name(n):
+     
+    for i in range(1,n+i):
+        if i%2==0:
+           print(i,even)
+        else:
+          print(i,odd)
+
+dec_name(4)
+
+
+DF
+Col1   Col2
+Null
+Null
+
+
+select *from Table
+
+where col1 not exist 'null'
+
+
+[15:51] Samriti Samriti (Unverified)
+ID NAME
+1 (RAM,KUMAR)
+2 (SHYAM,KUMAR)
+ 
+ Desired output
+ID NAME
+1 RAM
+1 KUMAR
+2 SHYAM
+2 KUMAR
+ 
+
+DF.withColumn("Name",explode("Name",",")).select(col("ID").drop(col("Name").show()
+
+select ID,string_split(Name,",") as 'Name' from Table
+
+

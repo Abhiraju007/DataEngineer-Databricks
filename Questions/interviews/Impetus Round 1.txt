@@ -1,0 +1,59 @@
+Table1
+
+data = [(1,'Abhishek',5000,"IT")]
+columns = ["EmployeID","Name","Salary","Dept"]
+EmployeID|Name|Salary|Dept
+
+2nd highest salary in each department
+
+
+
+DF = createDataFrame(data,columns).inferschema("inferschema",True).header("header",True)
+
+from pyspark.sql.functions import *
+
+Window1 = Window.PartitonBy("Dept").orderBy("Salary").desc()
+
+Df1 = DF.withColumn("Rank",Dense_rank()over(Window1))
+
+Df1.filter(col("Rank")==2).show()
+
+
+
+
+data = [(1,'Abhishek',5000,"IT")]
+columns = ["EmployeID","Name","Salary","Dept"]
+EmployeID|Name|Salary|Dept|email_id
+
+
+filter only valid email_id
+
+%sql
+
+select *from Table1
+
+or email_id like "*@gmail.com*"
+or email not in ("!@#$%^&*()_+*")
+or email not in ("*!@#$%^&*()_+")
+
+
+select *from Table1
+where emai_id like "a*"
+
+
+
+import os
+
+f = os.withopen("file_name")
+l = []
+
+for i in f:
+    for j in i:
+        if j != "#":
+         x =  l.append(j)
+        else:
+          return ""
+
+print(x)
+
+
